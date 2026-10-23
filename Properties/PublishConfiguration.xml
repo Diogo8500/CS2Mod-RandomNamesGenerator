@@ -4,30 +4,29 @@
 	<!--Name of the mod to display to players-->
 	<DisplayName Value="Roll a Name" />
 	<!--Short description of the mod-->
-	<ShortDescription Value="Random street and district names at the click of a dice button, from vanilla, curated or your own name lists." />
+	<ShortDescription Value="Random street, district and transit line names at the click of a dice button, from vanilla, curated or your own name lists." />
 	<!--Long description of the mod. Supports a minimal markdown subset.-->
 	<LongDescription>
-Just built a new road or created a new district, but its name isn't to your liking? You're fresh out of ideas for new names? **Roll a Name** adds a dedicated button next to the name in a street's or district's info panel. Click it to roll a new random name, and keep rolling until you find one you like.
+Just built a new road, created a new district or drawn a new transit line, but its name isn't to your liking? You're fresh out of ideas for new names? **Roll a Name** adds a dedicated button next to the name in a street's, district's or transit line's info panel. Click it to roll a new random name, and keep rolling until you find one you like.
 
 ## Features
-- **Randomize button**: roll a random name for any street or district from its info panel.
-- **Automatic naming** (optional, off by default): newly built streets and newly drawn districts get a random name right away.
-- **Choose your name sources**, separately for streets and districts. Tick any combination and each name is picked from one of them:
-  - **Vanilla names**: the game's own street and district names, in the language you play in.
-  - **Curated names**: names built from hand-picked prefixes, names and suffixes, like "Oakbrook Avenue", "Harrington Lane", "Old Ashford" or "Maple Heights". Think of it as an expansion pack for the vanilla names.
-  - **Your own names**: add one name per line to StreetNames.txt or DistrictNames.txt. The settings have a button that opens the folder.
+- **Randomize button**: roll a random name for any street, district or transit line from its info panel.
+- **Automatic naming** (optional, off by default): newly built streets, newly drawn districts and newly created transit lines get a random name right away.
+- **Choose your name sources**, separately for streets, districts and transit lines. Tick any combination and each name is picked from one of them:
+  - **Vanilla names**: the game's own street and district names, in the language you play in. (Transit lines have no vanilla names, only numbers like "Bus Line 3".)
+  - **Curated names**: names built from hand-picked prefixes, names and suffixes, like "Oakbrook Avenue", "Harrington Lane", "Old Ashford", "Maple Heights", "Red Line" or "Harbor Express". Transit lines can also be named after your city's own districts, like "Maple Heights–Oakbrook Line". Think of it as an expansion pack for the vanilla names. Curated names are in English in every language, for now.
+  - **Your own names**: add one name per line to StreetNames.txt, DistrictNames.txt or TransitLineNames.txt. The settings have a button that opens the folder.
 - Translated into all 12 game languages.
 
 ## Safe to remove
-Names are saved as normal custom names, so they stay in your save even if you remove the mod. Automatic naming only applies to new streets and districts: editing a road or district keeps its current name.
+Names are saved as normal custom names, so they stay in your save even if you remove the mod. Automatic naming only applies to new streets, districts and transit lines: editing a road, district or line keeps its current name.
 
 ## Coming next
-Streets and districts are just the start. Future updates will add random names for:
+Future updates will add random names for:
 - **Buildings**: homes, companies, city services, parks and landmarks
 - **Citizens**
 - **Vehicles**
 - **Animals**: pets and wildlife
-- **Transit lines**
 
 ## Feedback
 Found a bug or have an idea? Open an issue on GitHub: https://github.com/Diogo8500/CS2Mod-RandomNamesGenerator
@@ -49,13 +48,18 @@ Found a bug or have an idea? Open an issue on GitHub: https://github.com/Diogo85
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="" />
 	<!--Version of the mod-->
-	<ModVersion Value="1.0.0" />
+	<ModVersion Value="1.1.0" />
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.6.*" />
 	<!--Dependency for the mod, can be set multiple times-->
 	<Dependency Id="" />
 	<!--Change log for new version. Supports a minimal markdown subset.-->
-	<ChangeLog>Initial release.</ChangeLog>
+	<ChangeLog>
+- **Transit lines**: roll a random name from a line's info panel, or name new lines automatically (off by default).
+- Curated transit line names like "Red Line", "Harbor Express" or "Oakbrook–Ashford Line", which can also use your city's own district names.
+- New TransitLineNames.txt for your own line names.
+- The curated names descriptions now note that curated names are in English in every language, for now.
+	</ChangeLog>
 	<!--External link. Supported types are discord, github, youtube, twitch, x, paypal, patreon, buymeacoffee, kofi, crowdin, gitlab-->
 	<ExternalLink Type="github" Url="https://github.com/Diogo8500/CS2Mod-RandomNamesGenerator" />
 </Publish>

@@ -1,0 +1,61 @@
+<Publish>
+	<!--Id must be set in order to update an existing mod. It is filled automatically after publishing.-->
+	<ModId Value="" />
+	<!--Name of the mod to display to players-->
+	<DisplayName Value="Roll a Name" />
+	<!--Short description of the mod-->
+	<ShortDescription Value="Random street and district names at the click of a dice button, from vanilla, curated or your own name lists." />
+	<!--Long description of the mod. Supports a minimal markdown subset.-->
+	<LongDescription>
+Tired of naming every street and district yourself? **Roll a Name** adds a dice button next to the name in a street's or district's info panel. Click it to roll a new random name, and keep rolling until you find one you like.
+
+## Features
+- **Dice button**: roll a random name for any street or district from its info panel.
+- **Automatic naming** (optional, off by default): newly built streets and newly drawn districts get a random name right away.
+- **Choose your name sources**, separately for streets and districts. Tick any combination and each name is picked from one of them:
+  - **Vanilla names**: the game's own street and district names, in the language you play in.
+  - **Curated names**: names built from hand-picked prefixes, names and suffixes, like "Oakbrook Avenue", "Harrington Lane", "Old Ashford" or "Maple Heights". Think of it as an expansion pack for the vanilla names.
+  - **Your own names**: add one name per line to StreetNames.txt or DistrictNames.txt. The settings have a button that opens the folder.
+- Translated into all 12 game languages.
+
+## Safe to remove
+Names are saved as normal custom names, so they stay in your save even if you remove the mod. Automatic naming only applies to new streets and districts: editing a road or district keeps its current name.
+
+## Coming next
+Streets and districts are just the start. Future updates will add random names for:
+- **Buildings**: homes, companies, city services, parks and landmarks
+- **Citizens**
+- **Vehicles**
+- **Animals**: pets and wildlife
+- **Transit lines**
+
+## Feedback
+Found a bug or have an idea? Open an issue on GitHub: https://github.com/Diogo8500/CS2Mod-RandomNamesGenerator
+	</LongDescription>
+	<!--Thumbnail-->
+	<Thumbnail Value="Properties/Thumbnail.png" />
+	<!--Screenshot, can be set multiple times-->
+	<Screenshot Value="Properties/Screenshot1-StreetPanel.png" />
+	<Screenshot Value="Properties/Screenshot2-DistrictPanel.png" />
+	<Screenshot Value="Properties/Screenshot3-StreetBefore.jpg" />
+	<Screenshot Value="Properties/Screenshot4-StreetAfter.jpg" />
+	<Screenshot Value="Properties/Screenshot5-AddressBefore.jpg" />
+	<Screenshot Value="Properties/Screenshot6-AddressAfter.jpg" />
+	<Screenshot Value="Properties/Screenshot7-DistrictBefore.jpg" />
+	<Screenshot Value="Properties/Screenshot8-DistrictAfter.jpg" />
+	<Screenshot Value="Properties/Screenshot9-SettingsPage.jpg" />
+	<!--Tag, can be set multiple times-->
+	<Tag Value="Code Mod" />
+	<!--Link to the forum post where the mod can be discussed-->
+	<ForumLink Value="" />
+	<!--Version of the mod-->
+	<ModVersion Value="1.0.0" />
+	<!--Recommended version of the base game to use the mod-->
+	<GameVersion Value="1.6.*" />
+	<!--Dependency for the mod, can be set multiple times-->
+	<Dependency Id="" />
+	<!--Change log for new version. Supports a minimal markdown subset.-->
+	<ChangeLog>Initial release.</ChangeLog>
+	<!--External link. Supported types are discord, github, youtube, twitch, x, paypal, patreon, buymeacoffee, kofi, crowdin, gitlab-->
+	<ExternalLink Type="github" Url="https://github.com/Diogo8500/CS2Mod-RandomNamesGenerator" />
+</Publish>

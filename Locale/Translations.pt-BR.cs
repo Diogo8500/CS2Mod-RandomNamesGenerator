@@ -6,7 +6,7 @@ namespace RandomNames.Locale
     {
         private static readonly Dictionary<string, string> Portuguese = new Dictionary<string, string>
         {
-            { "Title", "Random Names Generator" },
+            { "Title", "Roll a Name" },
             { "Tab.Main", "Geral" },
 
             { "Group.Streets", "Ruas" },

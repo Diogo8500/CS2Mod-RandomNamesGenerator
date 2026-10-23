@@ -1,8 +1,10 @@
-# Random Names (Cities: Skylines II mod)
+# Roll a Name (Cities: Skylines II mod)
 
 Adds a dice button next to a street's or district's name in its info panel. Click it to give it a random name.
 Optionally (off by default), newly built streets and newly drawn districts get a random name automatically.
-In **Options > Random Names**, tick any combination of name sources, separately for streets and for
+Random names for buildings, citizens, vehicles, animals and transit lines are planned for future updates.
+
+In **Options > Roll a Name**, tick any combination of name sources, separately for streets and for
 districts. Each name comes from one of the ticked sources, picked at random:
 
 - **Vanilla names**: picks from the game's own names, the same lists it uses to name new streets and

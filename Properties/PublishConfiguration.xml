@@ -1,6 +1,6 @@
 <Publish>
 	<!--Id must be set in order to update an existing mod. It is filled automatically after publishing.-->
-	<ModId Value="" />
+	<ModId Value="164533" />
 	<!--Name of the mod to display to players-->
 	<DisplayName Value="Roll a Name" />
 	<!--Short description of the mod-->

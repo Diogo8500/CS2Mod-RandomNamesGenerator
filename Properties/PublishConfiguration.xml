@@ -7,7 +7,7 @@
 	<ShortDescription Value="Random street and district names at the click of a dice button, from vanilla, curated or your own name lists." />
 	<!--Long description of the mod. Supports a minimal markdown subset.-->
 	<LongDescription>
-Tired of naming every street and district yourself? **Roll a Name** adds a dice button next to the name in a street's or district's info panel. Click it to roll a new random name, and keep rolling until you find one you like.
+Just built a new road or created a new district, but their names are not to your liking? You're fresh out of ideas for new names? **Roll a Name** adds a dedicated button next to the name in a street's or district's info panel. Click it to roll a new random name, and keep rolling until you find one you like.
 
 ## Features
 - **Dice button**: roll a random name for any street or district from its info panel.

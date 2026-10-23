@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net472</TargetFramework>
+		<Configurations>Debug;Release</Configurations>
+		<LangVersion>9</LangVersion>
+	</PropertyGroup>
+
+	<!-- Mod.props / Mod.targets come from the official CS2 modding toolchain (Options > Modding in-game). -->
+	<Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.props" />
+	<Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.targets" />
+
+	<ItemGroup>
+		<Reference Include="Game"><Private>false</Private></Reference>
+		<Reference Include="Colossal.Core"><Private>false</Private></Reference>
+		<Reference Include="Colossal.Logging"><Private>false</Private></Reference>
+		<Reference Include="Colossal.IO.AssetDatabase"><Private>false</Private></Reference>
+		<Reference Include="Colossal.PSI.Common"><Private>false</Private></Reference>
+		<Reference Include="Colossal.Localization"><Private>false</Private></Reference>
+		<Reference Include="Colossal.UI.Binding"><Private>false</Private></Reference>
+		<Reference Include="UnityEngine.CoreModule"><Private>false</Private></Reference>
+		<Reference Include="Unity.Collections"><Private>false</Private></Reference>
+		<Reference Include="Unity.Entities"><Private>false</Private></Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Update="System"><Private>false</Private></Reference>
+		<Reference Update="System.Core"><Private>false</Private></Reference>
+		<Reference Update="System.Data"><Private>false</Private></Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="$(ModPropsFile)" Link="Properties\Mod.props" />
+		<None Include="$(ModTargetsFile)" Link="Properties\Mod.targets" />
+	</ItemGroup>
+
+	<!-- Keep the UI sources and npm packages out of the C# build. -->
+	<ItemGroup>
+		<Compile Remove="UI\**" />
+		<None Remove="UI\**" />
+	</ItemGroup>
+
+	<!-- Build the UI module (UI/) into the mod folder. DeployWIP deletes that folder, so this has to run after it. -->
+	<Target Name="BuildUI" AfterTargets="DeployWIP">
+		<Exec Command="npm install" WorkingDirectory="UI" Condition="!Exists('UI\node_modules')" />
+		<Exec Command="npm run build" WorkingDirectory="UI" />
+	</Target>
+</Project>

@@ -1,0 +1,21 @@
+# .NET build output
+bin/
+obj/
+*.user
+*.suo
+.vs/
+.idea/
+*.DotSettings.user
+
+# Unity IL post-processor state, created by the CS2 toolchain during builds
+Library/
+
+# UI module
+UI/node_modules/
+UI/build/
+npm-debug.log*
+
+# OS / editor
+Thumbs.db
+.DS_Store
+.vscode/

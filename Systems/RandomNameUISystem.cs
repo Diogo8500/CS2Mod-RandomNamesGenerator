@@ -2,6 +2,7 @@ using Colossal.UI.Binding;
 using Game.Areas;
 using Game.Net;
 using Game.Prefabs;
+using Game.Routes;
 using Game.UI;
 using Game.UI.InGame;
 using RandomNames.Naming;
@@ -19,12 +20,14 @@ namespace RandomNames.Systems
         private NameSystem m_NameSystem;
         private PrefabSystem m_PrefabSystem;
         private SelectedInfoUISystem m_SelectedInfoUISystem;
+        private TransitLineNameSystem m_TransitLineNameSystem;
 
         protected override void OnCreate()
         {
             base.OnCreate();
             m_NameSystem = World.GetOrCreateSystemManaged<NameSystem>();
             m_PrefabSystem = World.GetOrCreateSystemManaged<PrefabSystem>();
+            m_TransitLineNameSystem = World.GetOrCreateSystemManaged<TransitLineNameSystem>();
             m_SelectedInfoUISystem = World.GetOrCreateSystemManaged<SelectedInfoUISystem>();
             AddUpdateBinding(new GetterValueBinding<bool>(kGroup, "canRandomizeSelected", () => TryGetSelectedCategory(out _)));
             AddBinding(new TriggerBinding(kGroup, "randomizeSelectedName", RandomizeSelectedName));
@@ -42,6 +45,8 @@ namespace RandomNames.Systems
                 category = NameCategory.Street;
             else if (EntityManager.HasComponent<District>(entity))
                 category = NameCategory.District;
+            else if (EntityManager.HasComponent<TransportLine>(entity))
+                category = NameCategory.TransitLine;
             else
                 return false;
             return true;
@@ -53,8 +58,17 @@ namespace RandomNames.Systems
                 return;
 
             var entity = m_SelectedInfoUISystem.selectedEntity;
-            var vanillaId = VanillaSource.GetLocalizationId(EntityManager, m_PrefabSystem, entity);
-            var name = Mod.Generator.Generate(Mod.Settings.GetSources(category), category, vanillaId);
+            string name;
+            if (category == NameCategory.TransitLine)
+            {
+                // Transit line names can include the city's district names.
+                name = m_TransitLineNameSystem.GenerateName(entity);
+            }
+            else
+            {
+                var vanillaId = VanillaSource.GetLocalizationId(EntityManager, m_PrefabSystem, entity);
+                name = Mod.Generator.Generate(Mod.Settings.GetSources(category), category, vanillaId);
+            }
             m_NameSystem.SetCustomName(entity, name);
             m_SelectedInfoUISystem.RequestUpdate();
         }

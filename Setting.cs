@@ -7,13 +7,14 @@ using RandomNames.Naming;
 namespace RandomNames
 {
     [FileLocation(nameof(RandomNames))]
-    [SettingsUIGroupOrder(kStreetsGroup, kDistrictsGroup, kCustomFileGroup)]
-    [SettingsUIShowGroupName(kStreetsGroup, kDistrictsGroup, kCustomFileGroup)]
+    [SettingsUIGroupOrder(kStreetsGroup, kDistrictsGroup, kTransitLinesGroup, kCustomFileGroup)]
+    [SettingsUIShowGroupName(kStreetsGroup, kDistrictsGroup, kTransitLinesGroup, kCustomFileGroup)]
     public class Setting : ModSetting
     {
         public const string kSection = "Main";
         public const string kStreetsGroup = "Streets";
         public const string kDistrictsGroup = "Districts";
+        public const string kTransitLinesGroup = "TransitLines";
         public const string kCustomFileGroup = "CustomFile";
 
         public Setting(IMod mod) : base(mod)
@@ -44,11 +45,27 @@ namespace RandomNames
         [SettingsUISection(kSection, kDistrictsGroup)]
         public bool DistrictCustomFile { get; set; } = true;
 
+        [SettingsUISection(kSection, kTransitLinesGroup)]
+        public bool RenameTransitLines { get; set; } = false;
+
+        // No vanilla option: the game names lines from their number ("Bus Line 3"), not from a names list.
+        [SettingsUISection(kSection, kTransitLinesGroup)]
+        public bool TransitLineSyllables { get; set; } = true;
+
+        [SettingsUISection(kSection, kTransitLinesGroup)]
+        public bool TransitLineCustomFile { get; set; } = true;
+
         public NameSources GetSources(NameCategory category)
         {
-            return category == NameCategory.District
-                ? ToSources(DistrictWordLists, DistrictSyllables, DistrictCustomFile)
-                : ToSources(StreetWordLists, StreetSyllables, StreetCustomFile);
+            switch (category)
+            {
+                case NameCategory.District:
+                    return ToSources(DistrictWordLists, DistrictSyllables, DistrictCustomFile);
+                case NameCategory.TransitLine:
+                    return ToSources(false, TransitLineSyllables, TransitLineCustomFile);
+                default:
+                    return ToSources(StreetWordLists, StreetSyllables, StreetCustomFile);
+            }
         }
 
         private static NameSources ToSources(bool wordLists, bool syllables, bool customFile) =>
@@ -84,6 +101,9 @@ namespace RandomNames
             DistrictWordLists = true;
             DistrictSyllables = true;
             DistrictCustomFile = true;
+            RenameTransitLines = false;
+            TransitLineSyllables = true;
+            TransitLineCustomFile = true;
         }
     }
 }

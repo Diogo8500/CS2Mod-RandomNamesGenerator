@@ -11,6 +11,7 @@ namespace RandomNames.Locale
 
             { "Group.Streets", "Streets" },
             { "Group.Districts", "Districts" },
+            { "Group.TransitLines", "Transit lines" },
             { "Group.CustomFile", "Custom names files" },
 
             { "Label.RenameStreets", "Name new streets automatically" },
@@ -37,11 +38,20 @@ namespace RandomNames.Locale
             { "Label.DistrictCustomFile", "Custom names file" },
             { "Desc.DistrictCustomFile", "Pick district names from DistrictNames.txt. Skipped while the file is empty. Press 'Open names folder' below to edit the file and add your own names." },
 
+            { "Label.RenameTransitLines", "Name new transit lines automatically" },
+            { "Desc.RenameTransitLines", "Give newly created transit lines a random name from the selected name sources, instead of the game's numbered names like \"Bus Line 3\"." },
+
+            { "Label.TransitLineSyllables", "Curated names" },
+            { "Desc.TransitLineSyllables", "Generate names like \"Red Line\", \"Harbor Express\" or \"Oakbrook–Ashford Line\" from pre-built colors, places and line types, and your city's district names." },
+
+            { "Label.TransitLineCustomFile", "Custom names file" },
+            { "Desc.TransitLineCustomFile", "Pick transit line names from TransitLineNames.txt. Skipped while the file is empty. Press 'Open names folder' below to edit the file and add your own names." },
+
             { "Label.OpenNamesFolder", "Open names folder" },
-            { "Desc.OpenNamesFolder", "Open the folder containing StreetNames.txt and DistrictNames.txt. Put one name per line; lines starting with # are ignored." },
+            { "Desc.OpenNamesFolder", "Open the folder containing StreetNames.txt, DistrictNames.txt and TransitLineNames.txt. Put one name per line; lines starting with # are ignored." },
 
             { "Label.ReloadNamesFile", "Reload names files" },
-            { "Desc.ReloadNamesFile", "Re-read StreetNames.txt and DistrictNames.txt after you edit them." },
+            { "Desc.ReloadNamesFile", "Re-read StreetNames.txt, DistrictNames.txt and TransitLineNames.txt after you edit them." },
 
             { "UI.RandomName", "Random name" },
         };

@@ -32,6 +32,7 @@ namespace RandomNames
             // UIUpdate runs after the barrier is unlocked and before the Created tags are cleaned up.
             updateSystem.UpdateAt<StreetNameSystem>(SystemUpdatePhase.UIUpdate);
             updateSystem.UpdateAt<DistrictNameSystem>(SystemUpdatePhase.UIUpdate);
+            updateSystem.UpdateAt<TransitLineNameSystem>(SystemUpdatePhase.UIUpdate);
             updateSystem.UpdateAt<RandomNameUISystem>(SystemUpdatePhase.UIUpdate);
         }
 

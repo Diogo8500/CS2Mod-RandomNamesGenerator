@@ -11,6 +11,7 @@ namespace RandomNames.Locale
 
             { "Group.Streets", "道路" },
             { "Group.Districts", "地区" },
+            { "Group.TransitLines", "交通路線" },
             { "Group.CustomFile", "カスタム名前ファイル" },
 
             { "Label.RenameStreets", "新しい道路に自動で名前を付ける" },
@@ -23,7 +24,7 @@ namespace RandomNames.Locale
             { "Desc.StreetWordLists", "ゲーム本来の道路名から選びます。" },
 
             { "Label.StreetSyllables", "厳選された名前" },
-            { "Desc.StreetSyllables", "あらかじめ用意された独自の接頭辞・名前・接尾辞から名前を生成します。道路名の拡張パックのようなものです。" },
+            { "Desc.StreetSyllables", "あらかじめ用意された独自の接頭辞・名前・接尾辞から名前を生成します。道路名の拡張パックのようなものです。現在、名前は英語のみです。" },
 
             { "Label.StreetCustomFile", "カスタム名前ファイル" },
             { "Desc.StreetCustomFile", "StreetNames.txt から道路名を選びます。ファイルが空の間はスキップされます。下の「名前フォルダーを開く」を押してファイルを編集し、独自の名前を追加してください。" },
@@ -32,16 +33,25 @@ namespace RandomNames.Locale
             { "Desc.DistrictWordLists", "ゲーム本来の地区名から選びます。" },
 
             { "Label.DistrictSyllables", "厳選された名前" },
-            { "Desc.DistrictSyllables", "あらかじめ用意された独自の接頭辞・名前・接尾辞から名前を生成します。地区名の拡張パックのようなものです。" },
+            { "Desc.DistrictSyllables", "あらかじめ用意された独自の接頭辞・名前・接尾辞から名前を生成します。地区名の拡張パックのようなものです。現在、名前は英語のみです。" },
 
             { "Label.DistrictCustomFile", "カスタム名前ファイル" },
             { "Desc.DistrictCustomFile", "DistrictNames.txt から地区名を選びます。ファイルが空の間はスキップされます。下の「名前フォルダーを開く」を押してファイルを編集し、独自の名前を追加してください。" },
 
+            { "Label.RenameTransitLines", "新しい交通路線に自動で名前を付ける" },
+            { "Desc.RenameTransitLines", "新しく作成した交通路線に、ゲームの番号付きの名前の代わりに、選択した名前ソースからランダムな名前を付けます。" },
+
+            { "Label.TransitLineSyllables", "厳選された名前" },
+            { "Desc.TransitLineSyllables", "あらかじめ用意された色・地名・路線の種類と、街の地区名から「Red Line」「Harbor Express」「Oakbrook–Ashford Line」のような名前を生成します。現在、名前は英語のみです。" },
+
+            { "Label.TransitLineCustomFile", "カスタム名前ファイル" },
+            { "Desc.TransitLineCustomFile", "TransitLineNames.txt から路線名を選びます。ファイルが空の間はスキップされます。下の「名前フォルダーを開く」を押してファイルを編集し、独自の名前を追加してください。" },
+
             { "Label.OpenNamesFolder", "名前フォルダーを開く" },
-            { "Desc.OpenNamesFolder", "StreetNames.txt と DistrictNames.txt があるフォルダーを開きます。1行に1つの名前を書いてください。# で始まる行は無視されます。" },
+            { "Desc.OpenNamesFolder", "StreetNames.txt、DistrictNames.txt、TransitLineNames.txt があるフォルダーを開きます。1行に1つの名前を書いてください。# で始まる行は無視されます。" },
 
             { "Label.ReloadNamesFile", "名前ファイルを再読み込み" },
-            { "Desc.ReloadNamesFile", "編集後に StreetNames.txt と DistrictNames.txt を読み込み直します。" },
+            { "Desc.ReloadNamesFile", "編集後に StreetNames.txt、DistrictNames.txt、TransitLineNames.txt を読み込み直します。" },
 
             { "UI.RandomName", "ランダムな名前" },
         };

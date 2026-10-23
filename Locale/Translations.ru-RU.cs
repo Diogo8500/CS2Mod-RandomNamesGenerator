@@ -11,6 +11,7 @@ namespace RandomNames.Locale
 
             { "Group.Streets", "Улицы" },
             { "Group.Districts", "Районы" },
+            { "Group.TransitLines", "Транспортные линии" },
             { "Group.CustomFile", "Собственные файлы названий" },
 
             { "Label.RenameStreets", "Автоматически называть новые улицы" },
@@ -23,7 +24,7 @@ namespace RandomNames.Locale
             { "Desc.StreetWordLists", "Выбирает из оригинальных названий улиц игры." },
 
             { "Label.StreetSyllables", "Подобранные названия" },
-            { "Desc.StreetSyllables", "Создаёт названия из готовых префиксов, названий и суффиксов. Это своего рода набор расширения для названий улиц." },
+            { "Desc.StreetSyllables", "Создаёт названия из готовых префиксов, названий и суффиксов. Это своего рода набор расширения для названий улиц. Пока названия только на английском." },
 
             { "Label.StreetCustomFile", "Собственный файл названий" },
             { "Desc.StreetCustomFile", "Выбирает названия улиц из StreetNames.txt. Пропускается, пока файл пуст. Нажмите «Открыть папку с названиями» ниже, чтобы отредактировать файл и добавить свои названия." },
@@ -32,16 +33,25 @@ namespace RandomNames.Locale
             { "Desc.DistrictWordLists", "Выбирает из оригинальных названий районов игры." },
 
             { "Label.DistrictSyllables", "Подобранные названия" },
-            { "Desc.DistrictSyllables", "Создаёт названия из готовых префиксов, названий и суффиксов. Это своего рода набор расширения для названий районов." },
+            { "Desc.DistrictSyllables", "Создаёт названия из готовых префиксов, названий и суффиксов. Это своего рода набор расширения для названий районов. Пока названия только на английском." },
 
             { "Label.DistrictCustomFile", "Собственный файл названий" },
             { "Desc.DistrictCustomFile", "Выбирает названия районов из DistrictNames.txt. Пропускается, пока файл пуст. Нажмите «Открыть папку с названиями» ниже, чтобы отредактировать файл и добавить свои названия." },
 
+            { "Label.RenameTransitLines", "Автоматически называть новые транспортные линии" },
+            { "Desc.RenameTransitLines", "Даёт новым транспортным линиям случайное название из выбранных источников названий вместо номерных названий игры." },
+
+            { "Label.TransitLineSyllables", "Подобранные названия" },
+            { "Desc.TransitLineSyllables", "Создаёт названия вроде «Red Line», «Harbor Express» или «Oakbrook–Ashford Line» из готовых цветов, мест и типов линий, а также названий районов вашего города. Пока названия только на английском." },
+
+            { "Label.TransitLineCustomFile", "Собственный файл названий" },
+            { "Desc.TransitLineCustomFile", "Выбирает названия линий из TransitLineNames.txt. Пропускается, пока файл пуст. Нажмите «Открыть папку с названиями» ниже, чтобы отредактировать файл и добавить свои названия." },
+
             { "Label.OpenNamesFolder", "Открыть папку с названиями" },
-            { "Desc.OpenNamesFolder", "Открывает папку с файлами StreetNames.txt и DistrictNames.txt. Указывайте одно название в строке; строки, начинающиеся с #, игнорируются." },
+            { "Desc.OpenNamesFolder", "Открывает папку с файлами StreetNames.txt, DistrictNames.txt и TransitLineNames.txt. Указывайте одно название в строке; строки, начинающиеся с #, игнорируются." },
 
             { "Label.ReloadNamesFile", "Перезагрузить файлы названий" },
-            { "Desc.ReloadNamesFile", "Заново считывает StreetNames.txt и DistrictNames.txt после их редактирования." },
+            { "Desc.ReloadNamesFile", "Заново считывает StreetNames.txt, DistrictNames.txt и TransitLineNames.txt после их редактирования." },
 
             { "UI.RandomName", "Случайное название" },
         };

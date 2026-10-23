@@ -12,11 +12,12 @@ namespace RandomNames.Naming
         CustomFile = 4,
     }
 
-    // Add Building, TransitLine, etc. here when the mod grows.
+    // Add Building, Citizen, etc. here when the mod grows.
     public enum NameCategory
     {
         Street,
         District,
+        TransitLine,
     }
 
     public struct NameRequest
@@ -25,6 +26,9 @@ namespace RandomNames.Naming
 
         // The prefab's RandomLocalization ID (see VanillaSource.GetLocalizationId), or null if it has none.
         public string VanillaId;
+
+        // Names of places in the city, like its districts, that curated transit line names can refer to. May be null.
+        public IReadOnlyList<string> PlaceNames;
     }
 
     public interface INameSource
@@ -49,9 +53,9 @@ namespace RandomNames.Naming
             CustomFile.Load();
         }
 
-        public string Generate(NameSources sources, NameCategory category, string vanillaId)
+        public string Generate(NameSources sources, NameCategory category, string vanillaId, IReadOnlyList<string> placeNames = null)
         {
-            var request = new NameRequest { Category = category, VanillaId = vanillaId };
+            var request = new NameRequest { Category = category, VanillaId = vanillaId, PlaceNames = placeNames };
 
             // Retry a few times to avoid handing out the same name twice in a session.
             string name = null;

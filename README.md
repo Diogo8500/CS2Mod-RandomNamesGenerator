@@ -1,22 +1,26 @@
 # Roll a Name (Cities: Skylines II mod)
 
-Adds a dice button next to a street's or district's name in its info panel. Click it to give it a random name.
-Optionally (off by default), newly built streets and newly drawn districts get a random name automatically.
-Random names for buildings, citizens, vehicles, animals and transit lines are planned for future updates.
+Adds a dice button next to a street's, district's or transit line's name in its info panel. Click it to give it a
+random name. Optionally (off by default), newly built streets, newly drawn districts and newly created transit lines
+get a random name automatically.
+Random names for buildings, citizens, vehicles and animals are planned for future updates.
 
-In **Options > Roll a Name**, tick any combination of name sources, separately for streets and for
-districts. Each name comes from one of the ticked sources, picked at random:
+In **Options > Roll a Name**, tick any combination of name sources, separately for streets, districts and
+transit lines. Each name comes from one of the ticked sources, picked at random:
 
 - **Vanilla names**: picks from the game's own names, the same lists it uses to name new streets and
   districts, in the language you're playing in. (Portuguese has no district names, so the game falls
-  back to English ones.)
+  back to English ones.) Not available for transit lines: the game only numbers them ("Bus Line 3").
 - **Curated names**: generates names from pre-built prefixes, names and suffixes, like "Oakbrook Avenue",
-  "Harrington Lane", "Old Ashford" or "Maple Heights". Think of it as an extension pack for the vanilla names.
-- **Custom names files**: picks lines at random from `StreetNames.txt` or `DistrictNames.txt` in
-  `%USERPROFILE%\AppData\LocalLow\Colossal Order\Cities Skylines II\ModsData\RandomNames\`.
+  "Harrington Lane", "Old Ashford", "Maple Heights", "Red Line", "Harbor Express" or "Oakbrook–Ashford Line".
+  Transit line names can also use your city's own district names.
+  Think of it as an extension pack for the vanilla names. Curated names are in English in every language, for now.
+- **Custom names files**: picks lines at random from `StreetNames.txt`, `DistrictNames.txt` or
+  `TransitLineNames.txt` in `%USERPROFILE%\AppData\LocalLow\Colossal Order\Cities Skylines II\ModsData\RandomNames\`.
 
 The mod saves these names as normal custom names, so they stay in your save if you remove the mod.
-Automatic naming only applies to new streets and districts: editing a road or district keeps its current name.
+Automatic naming only applies to new streets, districts and lines: editing a road, district or line keeps its
+current name.
 
 ## Building
 
@@ -39,11 +43,11 @@ every file; to add a language, add a file and register it in `Translations.ByLoc
 
 ## Adding more name types later
 
-1. Add a value to `NameCategory` (for example `TransitLine`), and handle it in `SyllableSource` and
+1. Add a value to `NameCategory` (for example `Building`), and handle it in `SyllableSource` and
    `CustomFileSource` (which needs a names file for it). `VanillaSource` needs no changes: it uses
    whatever `RandomLocalization` the entity's prefab has.
 2. Add a system under `Systems/` that finds the new entities and calls `NameSystem.SetCustomName`.
-   Use `DistrictNameSystem` as the pattern.
+   Use `DistrictNameSystem` or `TransitLineNameSystem` as the pattern.
 3. Recognise the new entity in `RandomNameUISystem.TryGetSelectedCategory` so the dice button shows up.
 4. Add a group with an auto-name toggle and source checkboxes for the new type in `Setting.cs`
    (handled in `GetSources`), and register the system in `Mod.OnLoad`.
